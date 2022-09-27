@@ -27,12 +27,7 @@
 .App-link {
   color: #61dafb;
 }
-.survey {
-  background-color: #7d75e8;
-  border-radius: 10px;
-  align-self: center;
-  
-}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -1,6 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './index.css'
+import { FC } from 'react';
+import autoanimate from '@formkit/auto-animate';
+
+type props = {
+  message: string;
+}
+type state = {
+  message: string;
+}
+let actionOne : (internal:state, external:props) => void; 
+const Messenger:FC extends React.Component <{
+  input:props;
+}>?{
+ 
+}
 
 function App() {
   return (
