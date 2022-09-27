@@ -4,7 +4,7 @@ const express = require("express");
 //takes control of all requests starting with "/record"
 const recordRoutes = express.Router();
 
-//use the .conn file to connect to the database
+//use the functions given by .conn file to connect to the database
 const dbo = require("../db/conn");
 
 //convert id from string to id for "_id"
@@ -68,3 +68,6 @@ recordRoutes.route("/:id").delete((req, response) => {
         response.json(obj);
     });
 });
+
+//when this file is imported the router is what it gets
+module.exports = recordRoutes;

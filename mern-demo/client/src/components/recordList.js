@@ -20,8 +20,10 @@ const Record = (props) => (
 );
 //fetch data from database
 export default function RecordList() {
+    //records is the [] in useState([]) and setRecords is a function that changes it once it re-renders
+    //empty list passed into useState() is the initial 'state' of 'records'
     const [records, setRecords] = useState([]);
-    useEffect(() => {
+    useEffect(() => {//this is run after changing the website using js Document obj manipulation
         async function getRecords() {
             const response = await fetch("https://localhost:5000/record/");
             if (!response.ok) {
