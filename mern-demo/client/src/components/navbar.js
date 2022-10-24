@@ -11,7 +11,7 @@ export default function Navbar() {
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <NavLink className="navbar-brand" to="/">
-          <img style={{"width" : 25 + '%'}} src="https://d3cy9zhslanhfa.cloudfront.net/media/3800C044-6298-4575-A05D5C6B7623EE37/4B45D0EC-3482-4759-82DA37D8EA07D229/webimage-8A27671A-8A53-45DC-89D7BF8537F15A0D.png"></img>
+          <img style={{"width" : 25 + '%'}} src="https://imgs.search.brave.com/R_J99aSUQcMwPdsTVsZQIBXSBIIbpAxXqmSLQrXfcSY/rs:fit:501:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5U/cG8wZG80Rm5JeXVo/eFJSVW5GV2p3SGFI/QSZwaWQ9QXBp"></img>
           </NavLink>
           <button
             className="navbar-toggler"

@@ -22,7 +22,7 @@ export default function Create() {
         //post request sent to create url, add new to record
         const newPerson = { ...form }
         //this will require contacting database so async-await syntax used
-        await fetch("http://localhost:5000/record/add", {
+        await fetch("http://localhost:3000/record/add", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -51,49 +51,45 @@ export default function Create() {
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor = "position">Name</label>
                     <input
                         type="text"
                         className = "form-control"
                         id="position"
                         value={form.name}
-                        onChange={(e) => updateForm({name:e.target.value})}
+                        onChange={(e) => updateForm({position:e.target.value})}
                     />
                 </div>
                 <div>
                     <div className="form-group">
-                        <label htmlFor = "Senior">Name</label>
                         <input
                             type="radio"
                             className = "form-control"
                             id="positionOptions"
                             value="Senior"
                             checked = {form.level="Senior"}
-                            onChange={(e) => updateForm({name:e.target.value})}
+                            onChange={(e) => updateForm({position:e.target.value})}
                         />
                         <label htmlFor="positionSenior" className="form-check-label">Senior</label>
                     </div>
                     <div className="form-group">
-                        <label htmlFor = "level">Name</label>
                         <input
                             type="radio"
                             className = "form-control"
                             id="n"
                             value="Intern"
                             checked = {form.level="Intern"}
-                            onChange={(e) => updateForm({name:e.target.value})}
+                            onChange={(e) => updateForm({position:e.target.value})}
                         />
                         <label htmlFor="positionIntern" className="form-check-label">Intern</label>
                     </div>
                     <div className="form-group">
-                        <label htmlFor = "level">Name</label>
                         <input
                             type="radio"
                             className = "form-control"
                             id="n"
                             value="Junior"
                             checked = {form.level="Junior"}
-                            onChange={(e) => updateForm({name:e.target.value})}
+                            onChange={(e) => updateForm({level :e.target.value})}
                         />
                         <label htmlFor="positionJunior" className="form-check-label">Junior</label>
                     </div>

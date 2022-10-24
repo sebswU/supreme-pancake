@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
-import { json } from "stream/consumers";
 
 export default function Edit() {
     const [form, setForm] = useState({
@@ -14,7 +13,7 @@ export default function Edit() {
     useEffect(() => {
         async function fetchData() {
             const id = params.id.toString();
-            const response = await fetch(`https://localhost:5000/${id}`);
+            const response = await fetch(`https://localhost:3000/${id}`);
 
             if (!response.ok) {
                 const message = `an error has occured: ${response.statusText}`;
@@ -51,9 +50,9 @@ export default function Edit() {
             level: form.level,
         }
         //connect to database and locate id, edit it
-        await fetch(`https://localhost:5000/update/${params.id}`, {
+        await fetch(`https://localhost:3000/update/${params.id}`, {
             method: "POST",
-            body: json.stringify(edited),
+            body: JSON.stringify(edited),
             headers: {
                 "Content-Type": 'application/json'
             }

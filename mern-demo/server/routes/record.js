@@ -1,5 +1,5 @@
 const express = require("express");
-
+//CRUD (Create, Retrieve, Update, Delete)
 //an express router instance will be used as the middleman (middleware)
 //takes control of all requests starting with "/record"
 const recordRoutes = express.Router();
@@ -21,7 +21,9 @@ recordRoutes.route("/record").get(function (res, request) {
 
 //the following statements basically initialize and route different actions via requests
 
-//get individual records
+//get individual records (retrieve)
+//since this is retrieving, it uses an obj/dict as a search query
+//notice how id is the only thing used
 recordRoutes.route("/record/:id").get(function (req, res) {
     let db_connect = dbo.getDb();
     let query = {_id: ObjectId(req.params.id)};
@@ -30,7 +32,9 @@ recordRoutes.route("/record/:id").get(function (req, res) {
         res.json(result);
     });
 });
-//add instance
+//add instance (Create)
+//since this is create, it uses obj/dict as a new thing to be added
+//notive how _id is not used as it is automatically generated
 recordRoutes.route("/record/add").get(function (req, response) {
     let db_connect = dbo.getDb();
     let myobj = {
@@ -43,7 +47,7 @@ recordRoutes.route("/record/add").get(function (req, response) {
         response.json(result);
     });
 });
-//update one instance
+//update one instance (Update)
 recordRoutes.route("/update/:id").post(function (req, response) {
     let db_connect = dbo.getDb();
     let myQuery = {_id: ObjectId(req.params.id)};
@@ -59,7 +63,7 @@ recordRoutes.route("/update/:id").post(function (req, response) {
         response.json(obj);
     });
 });
-//delete one instance
+//delete one instance (Delete)
 recordRoutes.route("/:id").delete((req, response) => {
     let db_connect = dbo.getDb();
     let myQuery = {_id: ObjectId(req.params.id)};

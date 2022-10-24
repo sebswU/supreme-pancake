@@ -25,7 +25,7 @@ export default function RecordList() {
     const [records, setRecords] = useState([]);
     useEffect(() => {//this is run after changing the website using js Document obj manipulation
         async function getRecords() {
-            const response = await fetch("https://localhost:5000/record/");
+            const response = await fetch("https://localhost:3000/record/");
             if (!response.ok) {
                 const message = `An error occurred: ${response.statusText}`
                 window.alert(message);
@@ -40,7 +40,7 @@ export default function RecordList() {
 
     //deletes ENTIRE records
     async function deleteRecord(subgroup) {
-        const response = await fetch(`https://localhost:5000/${subgroup}/`, {
+        const response = await fetch(`https://localhost:3000/${subgroup}/`, {
             method:"DELETE"
         });
         const newRecords = ((el) => el._id !== response._id);
