@@ -1,0 +1,15 @@
+{%extends "base.html"%}
+
+{% block content %}
+    <h1>Enter State, County</h1>
+    <form method="get">
+        <br>
+        <input type="text" name="state" 
+        placeholder="e.g. Georgia" value="{{ request.form['state'] }}">
+        <br>
+        <input type="text" name="county" 
+        placeholder="e.g. Forsyth" value="{{ request.form['county'] }}">
+        <br>
+        <button type="submit">Submit Form</button>
+    </form>
+{% endblock %}
