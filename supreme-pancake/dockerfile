@@ -1,12 +1,13 @@
 FROM python:3.9.7
+WORKDIR /app
 
 #start python virtual environment
 RUN python3 -m venv /opt/venv
 
 #get dependencies
 COPY requirements.txt .
-RUN . /opt/venv/bin/activate && pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
 #run file
-COPY app.py .
-CMD . /opt/venv/bin/activate && exec python app.py
+COPY . .
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
